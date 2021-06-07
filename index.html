@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        let employee_init={
+            name:"josh",
+            job:"Web developer",
+            city:"LA"
+        }
+
+        function getTemplate(employee)
+        {
+            const temp=`
+            <h3>${employee.name}</h3>
+            <h3>${employee.job}</h3>
+            <h3>${employee.city}</h3>
+            `
+            return temp;
+        }
+
+        function show_Js()
+        {
+            employee_init.name="Musa" + (new Date()).getTime();
+            let temp=getTemplate(employee_init);
+            var container = document.getElementById("root_Js");
+            container.innerHTML=temp;
+        }
+
+        function show_React()
+        {
+            employee_init.name="Musa" + (new Date()).getTime();
+
+            let jsx= <div>
+                <h3>{employee_init.name}</h3>
+                <h3>{employee_init.job}</h3>
+                <h3>{employee_init.city}</h3>
+            </div>
+        
+            let container = document.getElementById("root_React");
+
+            ReactDOM.render(jsx,container);
+        }
+
+        setInterval(show_React,1000);
+        setInterval(show_Js,1000);
+
+    </script>
+
+  </head>
+  <body>
+
+    <h2>DOM vs Virtual Dom</h2>
+  
+    <h1>Actual DOM</h1>
+    <div id="root_Js"></div>
+    <h2>---------------------</h2>
+
+    <h1>Virtual DOM</h1>
+    <div id="root_React"></div>
+
+  </body>
+</html>
