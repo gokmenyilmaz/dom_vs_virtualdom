@@ -1,4 +1,4 @@
-## Open chrome web tools
-## Moretools->Rendering->Paint flash rendering
-## Paint Flashing
-## See diff
+- Open chrome web tools
+- Moretools->Rendering->Paint flash rendering
+- Paint Flashing
+- See diff
